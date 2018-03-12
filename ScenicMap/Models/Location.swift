@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 
-class Location : NSObject, NSCoding, Mappable{
+class Location : NSObject, NSCoding, Mappable {
 
 	var lat : Float?
 	var lng : Float?
@@ -60,5 +60,12 @@ class Location : NSObject, NSCoding, Mappable{
 		}
 
 	}
-
+    
+    static func ==(lhs: Location, rhs: Location) -> Bool {
+        guard lhs.lat == rhs.lat else { return false }
+        guard lhs.lng == rhs.lng else { return false }
+        guard lhs.name == rhs.name else { return false }
+        return true
+    }
+    
 }

@@ -33,6 +33,12 @@
 		A29FC4892056A5A100DADF6C /* MockScenicLocations_empty.json in Resources */ = {isa = PBXBuildFile; fileRef = A29FC4882056A5A100DADF6C /* MockScenicLocations_empty.json */; };
 		A29FC48A2056A5A100DADF6C /* MockScenicLocations_empty.json in Resources */ = {isa = PBXBuildFile; fileRef = A29FC4882056A5A100DADF6C /* MockScenicLocations_empty.json */; };
 		A29FC48B2056A5A100DADF6C /* MockScenicLocations_empty.json in Resources */ = {isa = PBXBuildFile; fileRef = A29FC4882056A5A100DADF6C /* MockScenicLocations_empty.json */; };
+		A29FC48D2056AF0F00DADF6C /* ScenicLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC48C2056AF0F00DADF6C /* ScenicLocationViewModel.swift */; };
+		A29FC48E2056AF0F00DADF6C /* ScenicLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC48C2056AF0F00DADF6C /* ScenicLocationViewModel.swift */; };
+		A29FC48F2056AF0F00DADF6C /* ScenicLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC48C2056AF0F00DADF6C /* ScenicLocationViewModel.swift */; };
+		A29FC4922056B21500DADF6C /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4912056B21500DADF6C /* Notifications.swift */; };
+		A29FC4932056B21500DADF6C /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4912056B21500DADF6C /* Notifications.swift */; };
+		A29FC4942056B21500DADF6C /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4912056B21500DADF6C /* Notifications.swift */; };
 		A55EEED45C5AA0B1878A4D27 /* Pods_ScenicMapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08ADCC693BA9EF3D4CAE70C3 /* Pods_ScenicMapUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +86,8 @@
 		A29FC48020569DB200DADF6C /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		A29FC48120569DB200DADF6C /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		A29FC4882056A5A100DADF6C /* MockScenicLocations_empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockScenicLocations_empty.json; sourceTree = "<group>"; };
+		A29FC48C2056AF0F00DADF6C /* ScenicLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicLocationViewModel.swift; sourceTree = "<group>"; };
+		A29FC4912056B21500DADF6C /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		A4FDEFD410DC65C0FCB6A82A /* Pods-ScenicMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenicMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScenicMapTests/Pods-ScenicMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6143CBB63F842288A2C089A /* Pods-ScenicMapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenicMapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScenicMapUITests/Pods-ScenicMapUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E472F692D44B0397467DD7E1 /* Pods_ScenicMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenicMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +164,7 @@
 				A29FC47620569B2100DADF6C /* ViewModels */,
 				A29FC47720569B2A00DADF6C /* Views */,
 				A29FC4412056993200DADF6C /* AppDelegate.swift */,
+				A29FC4902056B1F300DADF6C /* Utilis */,
 				A29FC4432056993200DADF6C /* ViewController.swift */,
 				A29FC4452056993200DADF6C /* Main.storyboard */,
 				A29FC44B2056993200DADF6C /* Assets.xcassets */,
@@ -207,6 +216,7 @@
 		A29FC47620569B2100DADF6C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A29FC48C2056AF0F00DADF6C /* ScenicLocationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -216,6 +226,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A29FC4902056B1F300DADF6C /* Utilis */ = {
+			isa = PBXGroup;
+			children = (
+				A29FC4912056B21500DADF6C /* Notifications.swift */,
+			);
+			path = Utilis;
 			sourceTree = "<group>";
 		};
 		A4F040C90B40E8CE7870829F /* Frameworks */ = {
@@ -533,6 +551,8 @@
 			files = (
 				A29FC48520569DB200DADF6C /* ApiClient.swift in Sources */,
 				A29FC47D20569D4C00DADF6C /* SLResponse.swift in Sources */,
+				A29FC48D2056AF0F00DADF6C /* ScenicLocationViewModel.swift in Sources */,
+				A29FC4922056B21500DADF6C /* Notifications.swift in Sources */,
 				A29FC4442056993200DADF6C /* ViewController.swift in Sources */,
 				A29FC48220569DB200DADF6C /* ApiService.swift in Sources */,
 				A29FC44A2056993200DADF6C /* ScenicMap.xcdatamodeld in Sources */,
@@ -546,9 +566,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29FC47B20569D4C00DADF6C /* Location.swift in Sources */,
+				A29FC4932056B21500DADF6C /* Notifications.swift in Sources */,
 				A29FC47E20569D4C00DADF6C /* SLResponse.swift in Sources */,
 				A29FC48320569DB200DADF6C /* ApiService.swift in Sources */,
 				A29FC45A2056993200DADF6C /* ScenicMapTests.swift in Sources */,
+				A29FC48E2056AF0F00DADF6C /* ScenicLocationViewModel.swift in Sources */,
 				A29FC48620569DB200DADF6C /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,9 +580,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29FC47C20569D4C00DADF6C /* Location.swift in Sources */,
+				A29FC4942056B21500DADF6C /* Notifications.swift in Sources */,
 				A29FC47F20569D4C00DADF6C /* SLResponse.swift in Sources */,
 				A29FC48420569DB200DADF6C /* ApiService.swift in Sources */,
 				A29FC4652056993200DADF6C /* ScenicMapUITests.swift in Sources */,
+				A29FC48F2056AF0F00DADF6C /* ScenicLocationViewModel.swift in Sources */,
 				A29FC48720569DB200DADF6C /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
