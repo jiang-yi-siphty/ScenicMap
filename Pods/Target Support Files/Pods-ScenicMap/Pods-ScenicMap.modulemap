@@ -1,0 +1,6 @@
+framework module Pods_ScenicMap {
+  umbrella header "Pods-ScenicMap-umbrella.h"
+
+  export *
+  module * { export * }
+}
