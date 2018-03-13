@@ -37,11 +37,9 @@ enum  ApiConfig {
         switch self {
         case .scenicLocations(_):
             return "/test-locations"
-       
         }
     }
 
-    
     var method: String {
         switch self {
         case .scenicLocations(_):
@@ -69,7 +67,6 @@ enum  ApiConfig {
         case .scenicLocations(_):
             baseUrl = ApiConfig.scenicBaseUrl
         }
-        
         if let url = URL(string: baseUrl + self.urlPath)  {
             return url
         } else {

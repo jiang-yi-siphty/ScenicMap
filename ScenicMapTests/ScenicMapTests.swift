@@ -34,6 +34,7 @@ class ScenicMapTests: XCTestCase {
                 XCTAssertTrue(locations!.count > 0)
             //MARK: We can test more key:value to verify the decode logic is right.
             case .fail(let error):
+                XCTAssertTrue(error == nil)
                 print(error.errorDescription ?? "Faild to load ScenicLocation data")
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)

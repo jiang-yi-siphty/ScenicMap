@@ -22,7 +22,7 @@ class ScenicLocationViewModel {
     var isAlertShowing = Variable<Bool>(false)
     private var apiService: ApiService? = nil
     
-    init(_ apiService: ApiService, at location: CLLocation) {
+    init(_ apiService: ApiService) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         locationManager = appDelegate.locationManager
         isFetchingData.value = true
@@ -31,15 +31,14 @@ class ScenicLocationViewModel {
         self.apiService = apiService
     }
     
-    func updateScenicLocation(at location: CLLocation) {
+    func updateScenicLocation() {
         guard let apiService = self.apiService else { return }
         fetchScenicLocation(apiService)
     }
     
     fileprivate func fetchScenicLocation(_ apiService: ApiService) {
-        guard let apiClient = apiClient else { return }
         guard let currentLocation = getCurrentLocation() else { return }
-        apiClient.fetchRestfulApi(ApiConfig.scenicLocations(currentLocation))
+        apiService.fetchRestfulApi(ApiConfig.scenicLocations(currentLocation))
             .subscribe(onNext: { status in
                 self.isFetchingData.value = false
                 switch status {
@@ -60,7 +59,7 @@ class ScenicLocationViewModel {
         apiResponse.asObservable().subscribe(onNext: { apiResponse in
             guard let locations = apiResponse?.locations else { return }
             guard let currentLocation = self.getCurrentLocation() else { return }
-            let allLocations = locations// + self.locations.value
+            let allLocations = Array(Set(locations + self.locations.value))
             self.locations.value = allLocations.sorted(by: { (location0, location1) -> Bool in
                 let clLocation0: CLLocation = CLLocation(latitude: CLLocationDegrees(location0.lat ?? 0.0),
                                                          longitude: CLLocationDegrees(location0.lng ?? 0.0))
@@ -70,17 +69,9 @@ class ScenicLocationViewModel {
             })
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-    
 }
 
 extension ScenicLocationViewModel {
-    
-//    fileprivate func mergeTwoLocationsArray(_ locations1: [Location], _ locations2: [Location]) -> [Location]{
-//        let locationAarry = [locations1, locations2].reduce([], { (result: [Location], element: [Location]) -> [Location] in
-//            return result + element
-//        })
-//        }
-//    }
     
     fileprivate func getCurrentLocation() -> CLLocation? {
         guard let locationManager = locationManager else { return nil }

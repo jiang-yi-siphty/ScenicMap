@@ -11,6 +11,7 @@ import CoreData
 import CoreLocation
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -21,6 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = 10
         locationManager.distanceFilter = 20
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .notDetermined, .restricted, .denied:
+                if #available(iOS 11.0, *) {
+                    locationManager.requestAlwaysAuthorization()
+                } else {
+                    locationManager.requestWhenInUseAuthorization()
+                }
+            default :
+                break
+                //Do nothing.
+            }
+        }
         return true
     }
     

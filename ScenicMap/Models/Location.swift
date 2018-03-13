@@ -61,11 +61,19 @@ class Location : NSObject, NSCoding, Mappable {
 
 	}
     
-    static func ==(lhs: Location, rhs: Location) -> Bool {
-        guard lhs.lat == rhs.lat else { return false }
-        guard lhs.lng == rhs.lng else { return false }
-        guard lhs.name == rhs.name else { return false }
-        return true
+    override var hashValue : Int {
+        var hashValueString = "\(lat ?? 0)"
+        hashValueString += "\(lng ?? 0)"
+        hashValueString += name ?? ""
+        return hashValueString.hashValue
+    }
+    
+    override func isEqual(_ object: Any?) -> Bool {
+        if let other = object as? Location {
+            return self.hashValue == other.hashValue
+        } else {
+            return false
+        }
     }
     
 }
