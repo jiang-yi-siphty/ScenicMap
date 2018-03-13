@@ -1,5 +1,5 @@
 //
-//  ScenicMapView.swift
+//  ScenicAnnotationView.swift
 //  ScenicMap
 //
 //  Created by Yi Jiang on 13/3/18.
@@ -8,12 +8,8 @@
 
 import UIKit
 import MapKit
-import RxSwift
-import RxCocoa
-import CoreLocation
+import Foundation
 
-class ScenicMapView: MKMapView {
-
-   
+class ScenicAnnotationView: MKAnnotationView {
 
 }

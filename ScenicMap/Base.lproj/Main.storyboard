@@ -67,7 +67,7 @@
         <scene sceneID="V2J-NX-AXB">
             <objects>
                 <viewController id="XM3-dg-DTz" customClass="ScenicDetailsViewController" customModule="ScenicMap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uf6-Jm-HeZ" customClass="ScenicLocationDetailsView" customModule="ScenicMap" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="uf6-Jm-HeZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -158,6 +158,6 @@
         <image name="NavigationBarItem_more" width="18" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hC0-hs-3Sa"/>
+        <segue reference="aSU-y6-bBa"/>
     </inferredMetricsTieBreakers>
 </document>

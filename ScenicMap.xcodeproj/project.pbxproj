@@ -11,13 +11,14 @@
 		3B566E074045844934A6925A /* Pods_ScenicMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E472F692D44B0397467DD7E1 /* Pods_ScenicMap.framework */; };
 		3DDF624E2057772200A2BA91 /* ScenicLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF624C2057772200A2BA91 /* ScenicLocationTableViewCell.swift */; };
 		3DDF624F2057772200A2BA91 /* ScenicLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF624D2057772200A2BA91 /* ScenicLocationTableViewCell.xib */; };
-		3DDF62512057776800A2BA91 /* ScenicLocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF62502057776800A2BA91 /* ScenicLocationDetailsView.swift */; };
-		3DDF6253205777B600A2BA91 /* ScenicMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF6252205777B600A2BA91 /* ScenicMapView.swift */; };
 		3DDF62572057784800A2BA91 /* ScenicMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF62562057784800A2BA91 /* ScenicMapViewController.swift */; };
 		3DDF62592057788900A2BA91 /* ScenicLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF62582057788900A2BA91 /* ScenicLocationTableViewController.swift */; };
 		3DDF625B205778B700A2BA91 /* ScenicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF625A205778B700A2BA91 /* ScenicDetailsViewController.swift */; };
 		3DDF625C2057860B00A2BA91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4412056993200DADF6C /* AppDelegate.swift */; };
 		3DDF625D2057860C00A2BA91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4412056993200DADF6C /* AppDelegate.swift */; };
+		3DDF625F2057A0CA00A2BA91 /* ScenicMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF625E2057A0CA00A2BA91 /* ScenicMapView.swift */; };
+		3DDF62612057A17500A2BA91 /* ScenicAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF62602057A17500A2BA91 /* ScenicAnnotationView.swift */; };
+		3DDF62632057A20100A2BA91 /* ScenicAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF62622057A20100A2BA91 /* ScenicAnnotation.swift */; };
 		A29FC4422056993200DADF6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4412056993200DADF6C /* AppDelegate.swift */; };
 		A29FC4472056993200DADF6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29FC4452056993200DADF6C /* Main.storyboard */; };
 		A29FC44A2056993200DADF6C /* ScenicMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4482056993200DADF6C /* ScenicMap.xcdatamodeld */; };
@@ -74,11 +75,12 @@
 		3C7F040E34824435A8A97E43 /* Pods-ScenicMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenicMap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScenicMap/Pods-ScenicMap.debug.xcconfig"; sourceTree = "<group>"; };
 		3DDF624C2057772200A2BA91 /* ScenicLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicLocationTableViewCell.swift; sourceTree = "<group>"; };
 		3DDF624D2057772200A2BA91 /* ScenicLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScenicLocationTableViewCell.xib; sourceTree = "<group>"; };
-		3DDF62502057776800A2BA91 /* ScenicLocationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicLocationDetailsView.swift; sourceTree = "<group>"; };
-		3DDF6252205777B600A2BA91 /* ScenicMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicMapView.swift; sourceTree = "<group>"; };
 		3DDF62562057784800A2BA91 /* ScenicMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicMapViewController.swift; sourceTree = "<group>"; };
 		3DDF62582057788900A2BA91 /* ScenicLocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicLocationTableViewController.swift; sourceTree = "<group>"; };
 		3DDF625A205778B700A2BA91 /* ScenicDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicDetailsViewController.swift; sourceTree = "<group>"; };
+		3DDF625E2057A0CA00A2BA91 /* ScenicMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScenicMapView.swift; sourceTree = "<group>"; };
+		3DDF62602057A17500A2BA91 /* ScenicAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicAnnotationView.swift; sourceTree = "<group>"; };
+		3DDF62622057A20100A2BA91 /* ScenicAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicAnnotation.swift; sourceTree = "<group>"; };
 		7E2B17B9434567913122D82C /* Pods_ScenicMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenicMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA4DEEFB5F3DF9A01463A1D /* Pods-ScenicMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenicMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScenicMapTests/Pods-ScenicMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A29FC43E2056993200DADF6C /* ScenicMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenicMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,8 +155,9 @@
 			children = (
 				3DDF624C2057772200A2BA91 /* ScenicLocationTableViewCell.swift */,
 				3DDF624D2057772200A2BA91 /* ScenicLocationTableViewCell.xib */,
-				3DDF62502057776800A2BA91 /* ScenicLocationDetailsView.swift */,
-				3DDF6252205777B600A2BA91 /* ScenicMapView.swift */,
+				3DDF625E2057A0CA00A2BA91 /* ScenicMapView.swift */,
+				3DDF62602057A17500A2BA91 /* ScenicAnnotationView.swift */,
+				3DDF62622057A20100A2BA91 /* ScenicAnnotation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,8 +189,8 @@
 			children = (
 				A29FC4412056993200DADF6C /* AppDelegate.swift */,
 				A29FC4452056993200DADF6C /* Main.storyboard */,
-				3DDF62582057788900A2BA91 /* ScenicLocationTableViewController.swift */,
 				3DDF62562057784800A2BA91 /* ScenicMapViewController.swift */,
+				3DDF62582057788900A2BA91 /* ScenicLocationTableViewController.swift */,
 				3DDF625A205778B700A2BA91 /* ScenicDetailsViewController.swift */,
 				A29FC47420569AC600DADF6C /* ServerManager */,
 				A29FC47520569B0F00DADF6C /* Models */,
@@ -574,13 +577,14 @@
 				A29FC47D20569D4C00DADF6C /* SLResponse.swift in Sources */,
 				A29FC48D2056AF0F00DADF6C /* ScenicLocationViewModel.swift in Sources */,
 				A29FC4922056B21500DADF6C /* Notifications.swift in Sources */,
-				3DDF62512057776800A2BA91 /* ScenicLocationDetailsView.swift in Sources */,
 				A29FC48220569DB200DADF6C /* ApiService.swift in Sources */,
 				3DDF62592057788900A2BA91 /* ScenicLocationTableViewController.swift in Sources */,
 				3DDF625B205778B700A2BA91 /* ScenicDetailsViewController.swift in Sources */,
 				A29FC44A2056993200DADF6C /* ScenicMap.xcdatamodeld in Sources */,
-				3DDF6253205777B600A2BA91 /* ScenicMapView.swift in Sources */,
+				3DDF62612057A17500A2BA91 /* ScenicAnnotationView.swift in Sources */,
+				3DDF62632057A20100A2BA91 /* ScenicAnnotation.swift in Sources */,
 				3DDF62572057784800A2BA91 /* ScenicMapViewController.swift in Sources */,
+				3DDF625F2057A0CA00A2BA91 /* ScenicMapView.swift in Sources */,
 				A29FC47A20569D4C00DADF6C /* Location.swift in Sources */,
 				A29FC4422056993200DADF6C /* AppDelegate.swift in Sources */,
 				3DDF624E2057772200A2BA91 /* ScenicLocationTableViewCell.swift in Sources */,

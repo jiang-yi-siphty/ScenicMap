@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import CoreLocation
+import MapKit
 
 class ScenicMapViewController: UIViewController {
-
+    var locationManager: 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
