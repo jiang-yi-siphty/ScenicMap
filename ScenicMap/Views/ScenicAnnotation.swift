@@ -10,6 +10,22 @@ import MapKit
 import Foundation
 
 open class ScenicAnnotation: MKPointAnnotation {
-    var location: CLLocation?
+    var scenicLocation: CLLocation?
+    var name: String?
     var scenic: Location?
+    
+    init(_ scenic: Location) {
+        super.init()
+        self.scenic = scenic
+        guard let lat = scenic.lat else { return }
+        guard let lng = scenic.lng else { return }
+        let scenicLocation = CLLocation(latitude: CLLocationDegrees(lat),
+                                        longitude: CLLocationDegrees(lng))
+        self.scenicLocation = scenicLocation
+        title = scenic.name
+        subtitle = "Latitude:\(lat)\nLongitude:\(lng)"
+        coordinate = scenicLocation.coordinate
+    }
+    
+    
 }

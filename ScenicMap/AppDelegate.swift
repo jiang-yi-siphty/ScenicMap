@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 //Do nothing.
             }
         }
+        locationManager.startUpdatingLocation()
         return true
     }
     

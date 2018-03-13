@@ -64,8 +64,7 @@ class ScenicLocationTableViewController: UITableViewController {
     fileprivate func bindViewModel() {
         tableView.dataSource = nil
         viewModel?.locations.asObservable().bind(to: tableView.rx.items(cellIdentifier: "ScenicLocationTableViewCell", cellType: ScenicLocationTableViewCell.self)) { (_, scenic, cell) in
-            cell.scenicName.text = scenic.name
-            cell.scenic = scenic
+            cell.configureCell(scenic)
         }.disposed(by: disposeBag)
         
     }

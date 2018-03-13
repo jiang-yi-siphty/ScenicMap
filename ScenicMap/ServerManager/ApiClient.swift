@@ -43,8 +43,8 @@ class ApiClient: ApiService {
     }
     
     func networkRequest(_ config: ApiConfig, completionHandler: @escaping (([String : Any]?, RequestError?) -> Void)) {
-//        networkRequestByAlamoFire(config, completionHandler: completionHandler)
-        networkRequestByNSURLSession(config, completionHandler: completionHandler)
+        networkRequestByAlamoFire(config, completionHandler: completionHandler)
+//        networkRequestByNSURLSession(config, completionHandler: completionHandler)
     }
 }
 
