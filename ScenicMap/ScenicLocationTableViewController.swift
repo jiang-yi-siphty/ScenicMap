@@ -37,7 +37,9 @@ class ScenicLocationTableViewController: UITableViewController {
             if let destinationVC = segue.destination as? ScenicDetailsViewController {
                 guard let selectedCellIndexPath = selectedCellIndexPath else { return }
                 guard let cell = tableView.cellForRow(at: selectedCellIndexPath) as? ScenicLocationTableViewCell else { return }
-                destinationVC.title = cell.ScenicName.text
+                guard let scenic = cell.scenic else { return }
+                destinationVC.scenic = scenic
+                destinationVC.title = cell.scenicName.text
             }
         }
     }
@@ -62,7 +64,8 @@ class ScenicLocationTableViewController: UITableViewController {
     fileprivate func bindViewModel() {
         tableView.dataSource = nil
         viewModel?.locations.asObservable().bind(to: tableView.rx.items(cellIdentifier: "ScenicLocationTableViewCell", cellType: ScenicLocationTableViewCell.self)) { (_, scenic, cell) in
-            cell.ScenicName.text = scenic.name
+            cell.scenicName.text = scenic.name
+            cell.scenic = scenic
         }.disposed(by: disposeBag)
         
     }

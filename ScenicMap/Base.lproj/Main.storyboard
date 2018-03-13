@@ -70,9 +70,49 @@
                     <view key="view" contentMode="scaleToFill" id="uf6-Jm-HeZ" customClass="ScenicLocationDetailsView" customModule="ScenicMap" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VD-rX-xzn">
+                                <rect key="frame" x="69" y="135" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUF-uG-knP">
+                                <rect key="frame" x="55" y="175" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dee-rd-00R">
+                                <rect key="frame" x="166" y="135" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqE-dz-Ysw">
+                                <rect key="frame" x="166" y="175" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dee-rd-00R" firstAttribute="leading" secondItem="9VD-rX-xzn" secondAttribute="trailing" constant="29" id="Atk-b3-VcQ"/>
+                            <constraint firstItem="OqE-dz-Ysw" firstAttribute="centerY" secondItem="EUF-uG-knP" secondAttribute="centerY" id="I7P-gI-qJb"/>
+                            <constraint firstItem="Dee-rd-00R" firstAttribute="centerY" secondItem="9VD-rX-xzn" secondAttribute="centerY" id="ItH-EA-8km"/>
+                            <constraint firstItem="9VD-rX-xzn" firstAttribute="leading" secondItem="Gys-zN-RS3" secondAttribute="leading" constant="69" id="VlB-OL-xWO"/>
+                            <constraint firstItem="OqE-dz-Ysw" firstAttribute="leading" secondItem="EUF-uG-knP" secondAttribute="trailing" constant="29" id="bKM-gD-eOh"/>
+                            <constraint firstItem="EUF-uG-knP" firstAttribute="top" secondItem="9VD-rX-xzn" secondAttribute="bottom" constant="19" id="e9s-5u-C5w"/>
+                            <constraint firstItem="EUF-uG-knP" firstAttribute="trailing" secondItem="9VD-rX-xzn" secondAttribute="trailing" id="fDG-dp-cqe"/>
+                            <constraint firstItem="9VD-rX-xzn" firstAttribute="top" secondItem="Gys-zN-RS3" secondAttribute="top" constant="71" id="sbB-x4-MEL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gys-zN-RS3"/>
                     </view>
+                    <connections>
+                        <outlet property="latitudeLabel" destination="Dee-rd-00R" id="dj4-VD-sXM"/>
+                        <outlet property="longitudeLabel" destination="OqE-dz-Ysw" id="Xs9-ld-AD7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTK-N4-Mzj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

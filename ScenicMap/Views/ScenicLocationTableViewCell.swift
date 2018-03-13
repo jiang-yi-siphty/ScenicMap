@@ -9,7 +9,8 @@
 import UIKit
 
 class ScenicLocationTableViewCell: UITableViewCell {
-    @IBOutlet weak var ScenicName: UILabel!
+    @IBOutlet weak var scenicName: UILabel!
+    var scenic: Location? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +30,8 @@ class ScenicLocationTableViewCell: UITableViewCell {
     
     func configureCell(_ scenic: Location?) {
         guard let scenic = scenic else { return }
-        ScenicName.text = scenic.name
+        scenicName.text = scenic.name
+        self.scenic = scenic
     }
     
 }

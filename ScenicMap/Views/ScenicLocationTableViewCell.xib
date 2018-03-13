@@ -30,7 +30,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="ScenicName" destination="7AM-gC-M27" id="IeB-PQ-sCP"/>
+                <outlet property="scenicName" destination="7AM-gC-M27" id="IeB-PQ-sCP"/>
             </connections>
         </tableViewCell>
     </objects>
