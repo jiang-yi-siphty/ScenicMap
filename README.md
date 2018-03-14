@@ -25,3 +25,10 @@ Use XCTest framework for test API Web Service Call.
 
 ## TOOLS
 **JSONExport**
+
+
+## TODO list (14th Mar 2018)  
+### In the Scenic Table View, the custom scenic table view cells need to be shown.   
+### In the Scenic Details View, a text field should be layout to allow user to edit comment for the scenic.  
+### In the Scenic Map View, the latest annotation tag should replace the old fashion pin annotation.
+### Find better solution to merge default scenic list and firebase scenic list in data model. 
