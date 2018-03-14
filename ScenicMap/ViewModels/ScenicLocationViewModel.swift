@@ -57,7 +57,8 @@ class ScenicLocationViewModel {
     }
     
     fileprivate func bindLocations() {
-        apiResponse.asObservable().subscribe(onNext: { apiResponse in
+        apiResponse.asObservable()
+            .subscribe(onNext: { apiResponse in
             guard let locations = apiResponse?.locations else { return }
             guard let currentLocation = self.getCurrentLocation() else { return }
             let allLocations = Array(Set(locations + self.locations.value))
@@ -68,7 +69,8 @@ class ScenicLocationViewModel {
                                                          longitude: CLLocationDegrees(location1.lng ?? 0.0))
                 return clLocation0.distance(from: currentLocation) < clLocation1.distance(from: currentLocation)
             })
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: nil, onCompleted: nil, onDisposed: nil)
+            .disposed(by: disposeBag)
     }
 }
 

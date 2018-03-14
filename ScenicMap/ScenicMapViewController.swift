@@ -30,7 +30,6 @@ class ScenicMapViewController: UIViewController {
             bindCustomScenicViewModel()
         }
     }
-    
     var selectedAnnotation: ScenicAnnotation? = nil
     
     override func viewDidLoad() {
@@ -76,14 +75,10 @@ class ScenicMapViewController: UIViewController {
         csViewModel?.locations.asObservable().subscribe(onNext: { locations in
             let annotations = locations.map({ location -> ScenicAnnotation in
                 let annotation = ScenicAnnotation(location)
-//                DispatchQueue.main.async {
-//                    self.scenicMapView.addAnnotation(annotation)
-//                }
                 return annotation
             })
             DispatchQueue.main.async {
                 self.scenicMapView.addAnnotations(annotations)
-//                self.scenicMapView.showAnnotations(annotations, animated: true)
             }
         }, onError: nil, onCompleted: nil, onDisposed: nil)
             .disposed(by: disposeBag)
@@ -95,7 +90,6 @@ class ScenicMapViewController: UIViewController {
 extension ScenicMapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("did select!!!!!!!!!!!!!!")
         selectedAnnotation = view.annotation as! ScenicAnnotation
     }
     
@@ -104,12 +98,10 @@ extension ScenicMapViewController: MKMapViewDelegate {
         let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotationView")
         annotationView.canShowCallout = true
         annotationView.rightCalloutAccessoryView = UIButton.init(type: UIButtonType.detailDisclosure)
-        
         return annotationView
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        print("callout accessary ")
         self.performSegue(withIdentifier: "ShowMapDetailsViewSegue", sender: self)
     }
 
@@ -151,7 +143,7 @@ extension ScenicMapViewController {
         let touchMapCoordinate = scenicMapView.convert(touchPoint, toCoordinateFrom: scenicMapView)
         let clLocation = CLLocation(latitude: touchMapCoordinate.latitude,
                                     longitude: touchMapCoordinate.longitude)
-        
+        //MARK: Alert Controller for user type in custom scenic's name
         let addNewAnnotationAlert = UIAlertController(title: "Add New Scenic", message: nil, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         addNewAnnotationAlert.addAction(cancelAction)

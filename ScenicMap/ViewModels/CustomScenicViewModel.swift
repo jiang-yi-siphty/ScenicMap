@@ -19,9 +19,6 @@ class CustomScenicViewModel {
     var locationManager: CLLocationManager? = nil
     var locations = Variable<[Location]>([])
     
-    init() {
-    }
-    
     func fetchCustomScenic() {
         let rootRef = Database.database().reference()
         rootRef.child("scenics")
@@ -48,11 +45,12 @@ class CustomScenicViewModel {
         scenicsRef.child("\(scenic.hashValue)").setValue(Mapper().toJSON(scenic))
     }
     
-    
     fileprivate func bindLocations() {
-        locations.asObservable().subscribe(onNext: {locations in
+        locations.asObservable()
+            .subscribe(onNext: {locations in
             
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: nil, onCompleted: nil, onDisposed: nil)
+            .disposed(by: disposeBag)
     }
 }
 

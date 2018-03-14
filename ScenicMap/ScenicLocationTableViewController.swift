@@ -13,7 +13,7 @@ import RxCocoa
 class ScenicLocationTableViewController: UITableViewController {
 
     fileprivate let disposeBag = DisposeBag()
-    var viewModel: ScenicLocationViewModel? {
+    var slViewModel: ScenicLocationViewModel? {
         didSet {
             bindViewModel()
         }
@@ -25,7 +25,8 @@ class ScenicLocationTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         setupUI()
-        viewModel = ScenicLocationViewModel(ApiClient())
+        slViewModel = ScenicLocationViewModel(ApiClient())
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,9 +54,8 @@ class ScenicLocationTableViewController: UITableViewController {
                 self.selectedCellIndexPath = indexPath
                 self.performSegue(withIdentifier: "ShowTableViewDetailsViewSegue", sender: self)
             }).disposed(by: disposeBag)
-        
-        refreshBarbuttonItem.rx.tap.asObservable().subscribe(onNext: { () in
-            self.viewModel?.updateScenicLocation()
+         refreshBarbuttonItem.rx.tap.asObservable().subscribe(onNext: { () in
+            self.slViewModel?.updateScenicLocation()
         }, onError: { error in
             print("error: \(error.localizedDescription)")
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
@@ -63,7 +63,7 @@ class ScenicLocationTableViewController: UITableViewController {
 
     fileprivate func bindViewModel() {
         tableView.dataSource = nil
-        viewModel?.locations.asObservable().bind(to: tableView.rx.items(cellIdentifier: "ScenicLocationTableViewCell", cellType: ScenicLocationTableViewCell.self)) { (_, scenic, cell) in
+        slViewModel?.locations.asObservable().bind(to: tableView.rx.items(cellIdentifier: "ScenicLocationTableViewCell", cellType: ScenicLocationTableViewCell.self)) { (_, scenic, cell) in
             cell.configureCell(scenic)
         }.disposed(by: disposeBag)
         
