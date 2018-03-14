@@ -1,5 +1,5 @@
 # ScenicMap
-This is a scenic map app to present my coding skills in Swift. In the map view, long press the map can add a new custom scenic annotation. The new custom scenic will be stored in Firebase database. Other user can see the custom scenic after refresh the map view.
+This is a scenic map app to present my coding skills in Swift. In the map view, long press the map can add a new custom scenic annotation. The new custom scenic will be stored in Firebase database. Other users can see the custom scenic after refresh the map view.
 
 ## Orientation
 I have include all dependent cocoa pods in this repo. Please use Xcode to open the ScenicMap.xcworkspace.   
@@ -34,4 +34,4 @@ Use XCTest framework for test API Web Service Call.
 2. In the Scenic Details View, a text field should be layout to allow user to edit comment for the scenic.  
 3. In the Scenic Map View, the latest annotation tag should replace the old fashion pin annotation.
 4. Find better solution to merge default scenic list and firebase scenic list in data model.
-5. provide the delete feature for custom scenic in all views. 
+5. Provide the delete feature for custom scenic in all views. 
