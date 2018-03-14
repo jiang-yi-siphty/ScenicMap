@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import CoreLocation
+import Firebase
+import FirebaseCore
 
 @UIApplicationMain
 
@@ -16,8 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var locationManager = CLLocationManager()
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //MARK: Firebase
+        FirebaseApp.configure()
+        
         //MARK: LocationManager
         locationManager.delegate = self
         locationManager.desiredAccuracy = 10

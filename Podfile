@@ -4,8 +4,11 @@ platform :ios, '9.0'
 def shared_pods_for_target
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'RxMKMapView'
     pod 'Alamofire'
     pod 'ObjectMapper'
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
 end
 
 target 'ScenicMap' do

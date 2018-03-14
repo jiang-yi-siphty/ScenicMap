@@ -26,6 +26,13 @@ open class ScenicAnnotation: MKPointAnnotation {
         subtitle = "Latitude:\(lat)\nLongitude:\(lng)"
         coordinate = scenicLocation.coordinate
     }
-    
-    
+//    
+//    init(_ clLocation: CLLocation,_ name: String) {
+//        super.init()
+//        scenicLocation = clLocation
+//        self.name = name
+////        scenic = scenic
+//        title = name
+//        subtitle = "Latitude:\(clLocation.coordinate.latitude)\nLongitude:\(clLocation.coordinate.longitude)"        
+//    }
 }

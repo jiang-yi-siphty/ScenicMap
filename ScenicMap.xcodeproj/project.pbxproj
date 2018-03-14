@@ -17,6 +17,11 @@
 		3DDF625C2057860B00A2BA91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4412056993200DADF6C /* AppDelegate.swift */; };
 		3DDF625D2057860C00A2BA91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4412056993200DADF6C /* AppDelegate.swift */; };
 		3DDF62632057A20100A2BA91 /* ScenicAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF62622057A20100A2BA91 /* ScenicAnnotation.swift */; };
+		3DDF626520589A0C00A2BA91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF626420589A0C00A2BA91 /* GoogleService-Info.plist */; };
+		3DDF626620589A0C00A2BA91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF626420589A0C00A2BA91 /* GoogleService-Info.plist */; };
+		3DDF626720589A0C00A2BA91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3DDF626420589A0C00A2BA91 /* GoogleService-Info.plist */; };
+		3DDF62692058AC4600A2BA91 /* CustomScenicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF62682058AC4600A2BA91 /* CustomScenicViewModel.swift */; };
+		3DDF626A2058AC4600A2BA91 /* CustomScenicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDF62682058AC4600A2BA91 /* CustomScenicViewModel.swift */; };
 		A29FC4422056993200DADF6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4412056993200DADF6C /* AppDelegate.swift */; };
 		A29FC4472056993200DADF6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A29FC4452056993200DADF6C /* Main.storyboard */; };
 		A29FC44A2056993200DADF6C /* ScenicMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A29FC4482056993200DADF6C /* ScenicMap.xcdatamodeld */; };
@@ -77,6 +82,8 @@
 		3DDF62582057788900A2BA91 /* ScenicLocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicLocationTableViewController.swift; sourceTree = "<group>"; };
 		3DDF625A205778B700A2BA91 /* ScenicDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicDetailsViewController.swift; sourceTree = "<group>"; };
 		3DDF62622057A20100A2BA91 /* ScenicAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenicAnnotation.swift; sourceTree = "<group>"; };
+		3DDF626420589A0C00A2BA91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3DDF62682058AC4600A2BA91 /* CustomScenicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScenicViewModel.swift; sourceTree = "<group>"; };
 		7E2B17B9434567913122D82C /* Pods_ScenicMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScenicMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EA4DEEFB5F3DF9A01463A1D /* Pods-ScenicMapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScenicMapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScenicMapTests/Pods-ScenicMapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A29FC43E2056993200DADF6C /* ScenicMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenicMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +201,7 @@
 				A29FC44B2056993200DADF6C /* Assets.xcassets */,
 				A29FC44D2056993200DADF6C /* LaunchScreen.storyboard */,
 				A29FC4502056993200DADF6C /* Info.plist */,
+				3DDF626420589A0C00A2BA91 /* GoogleService-Info.plist */,
 				A29FC4482056993200DADF6C /* ScenicMap.xcdatamodeld */,
 			);
 			path = ScenicMap;
@@ -241,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				A29FC48C2056AF0F00DADF6C /* ScenicLocationViewModel.swift */,
+				3DDF62682058AC4600A2BA91 /* CustomScenicViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -384,6 +393,7 @@
 				A29FC4472056993200DADF6C /* Main.storyboard in Resources */,
 				3DDF624F2057772200A2BA91 /* ScenicLocationTableViewCell.xib in Resources */,
 				A29FC4892056A5A100DADF6C /* MockScenicLocations_empty.json in Resources */,
+				3DDF626520589A0C00A2BA91 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +403,7 @@
 			files = (
 				A29FC47320569AAB00DADF6C /* MockScenicLocations.json in Resources */,
 				A29FC48A2056A5A100DADF6C /* MockScenicLocations_empty.json in Resources */,
+				3DDF626620589A0C00A2BA91 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A29FC48B2056A5A100DADF6C /* MockScenicLocations_empty.json in Resources */,
+				3DDF626720589A0C00A2BA91 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,16 +508,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ScenicMap/Pods-ScenicMap-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxMKMapView/RxMKMapView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxMKMapView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -577,6 +597,7 @@
 				A29FC44A2056993200DADF6C /* ScenicMap.xcdatamodeld in Sources */,
 				3DDF62632057A20100A2BA91 /* ScenicAnnotation.swift in Sources */,
 				3DDF62572057784800A2BA91 /* ScenicMapViewController.swift in Sources */,
+				3DDF62692058AC4600A2BA91 /* CustomScenicViewModel.swift in Sources */,
 				A29FC47A20569D4C00DADF6C /* Location.swift in Sources */,
 				A29FC4422056993200DADF6C /* AppDelegate.swift in Sources */,
 				3DDF624E2057772200A2BA91 /* ScenicLocationTableViewCell.swift in Sources */,
@@ -593,6 +614,7 @@
 				A29FC47E20569D4C00DADF6C /* SLResponse.swift in Sources */,
 				A29FC48320569DB200DADF6C /* ApiService.swift in Sources */,
 				A29FC45A2056993200DADF6C /* ScenicMapTests.swift in Sources */,
+				3DDF626A2058AC4600A2BA91 /* CustomScenicViewModel.swift in Sources */,
 				A29FC48E2056AF0F00DADF6C /* ScenicLocationViewModel.swift in Sources */,
 				A29FC48620569DB200DADF6C /* ApiClient.swift in Sources */,
 			);
@@ -762,7 +784,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GZQL33LF2B;
+				DEVELOPMENT_TEAM = 5FK4887X5M;
 				INFOPLIST_FILE = ScenicMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.siphty.ScenicMap;
@@ -781,7 +803,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GZQL33LF2B;
+				DEVELOPMENT_TEAM = 5FK4887X5M;
 				INFOPLIST_FILE = ScenicMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.siphty.ScenicMap;

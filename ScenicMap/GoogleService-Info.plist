@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>414711466914-1pl7m9f6ua9fdmu3nc1luo0rqdhhueok.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.414711466914-1pl7m9f6ua9fdmu3nc1luo0rqdhhueok</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDejy_jsMj1Uv_GVyd52H0yAGjnW-bszNs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>414711466914</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.siphty.ScenicMap</string>
+	<key>PROJECT_ID</key>
+	<string>scenic-map-siphty</string>
+	<key>STORAGE_BUCKET</key>
+	<string>scenic-map-siphty.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:414711466914:ios:0ac6ccf55ab4c06c</string>
+	<key>DATABASE_URL</key>
+	<string>https://scenic-map-siphty.firebaseio.com</string>
+</dict>
+</plist>

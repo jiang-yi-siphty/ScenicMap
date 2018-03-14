@@ -15,6 +15,7 @@ class Location : NSObject, NSCoding, Mappable {
 	var lat : Float?
 	var lng : Float?
 	var name : String?
+    var comment : String? = nil
 
 
 	class func newInstance(map: Map) -> Mappable?{
@@ -28,7 +29,7 @@ class Location : NSObject, NSCoding, Mappable {
 		lat <- map["lat"]
 		lng <- map["lng"]
 		name <- map["name"]
-		
+		comment <- map["comment"]
 	}
 
     /**
@@ -37,10 +38,10 @@ class Location : NSObject, NSCoding, Mappable {
     */
     @objc required init(coder aDecoder: NSCoder)
 	{
-         lat = aDecoder.decodeObject(forKey: "lat") as? Float
-         lng = aDecoder.decodeObject(forKey: "lng") as? Float
-         name = aDecoder.decodeObject(forKey: "name") as? String
-
+        lat = aDecoder.decodeObject(forKey: "lat") as? Float
+        lng = aDecoder.decodeObject(forKey: "lng") as? Float
+        name = aDecoder.decodeObject(forKey: "name") as? String
+        comment = aDecoder.decodeObject(forKey: "comment") as? String
 	}
 
     /**
@@ -58,6 +59,9 @@ class Location : NSObject, NSCoding, Mappable {
 		if name != nil{
 			aCoder.encode(name, forKey: "name")
 		}
+        if comment != nil{
+            aCoder.encode(comment, forKey: "comment")
+        }
 
 	}
     
@@ -75,5 +79,6 @@ class Location : NSObject, NSCoding, Mappable {
             return false
         }
     }
+    
     
 }

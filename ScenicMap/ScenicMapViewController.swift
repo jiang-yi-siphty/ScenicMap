@@ -9,8 +9,10 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxMKMapView
 import CoreLocation
 import MapKit
+import ObjectMapper
 
 class ScenicMapViewController: UIViewController {
     
@@ -18,27 +20,37 @@ class ScenicMapViewController: UIViewController {
     @IBOutlet weak var refreshBarbuttonItem: UIBarButtonItem!
     let disposeBag = DisposeBag()
     var locationManager: CLLocationManager? = nil
-    var viewModel: ScenicLocationViewModel? {
+    var slViewModel: ScenicLocationViewModel? {
         didSet {
-            bindViewModel()
+            bindScneicLocationViewModel()
         }
     }
+    var csViewModel: CustomScenicViewModel? {
+        didSet {
+            bindCustomScenicViewModel()
+        }
+    }
+    
     var selectedAnnotation: ScenicAnnotation? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         locationManager = appDelegate.locationManager
-        viewModel = ScenicLocationViewModel(ApiClient())
+        slViewModel = ScenicLocationViewModel(ApiClient())
+        csViewModel = CustomScenicViewModel()
         scenicMapView.showsUserLocation = true
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(locationManagerDidUpdateLocation(_ :)),
                                                name: NSNotification.Name(rawValue: Notification.didUpdateLocations),
                                                object: nil)
+        let longPressRecogniser = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
+        longPressRecogniser.minimumPressDuration = 1.0
+        scenicMapView.addGestureRecognizer(longPressRecogniser)
     }
     
-    private func bindViewModel(){
-        viewModel?.locations.asObservable().subscribe(onNext: { locations in
+    private func bindScneicLocationViewModel(){
+        slViewModel?.locations.asObservable().subscribe(onNext: { locations in
             let annotations = locations.map({ location -> ScenicAnnotation in
                 let annotation = ScenicAnnotation(location)
                 return annotation
@@ -52,10 +64,31 @@ class ScenicMapViewController: UIViewController {
         
         refreshBarbuttonItem.rx.tap.asObservable().subscribe(onNext: { () in
             self.clearAnnotation()
-            self.viewModel?.updateScenicLocation()
+            self.slViewModel?.updateScenicLocation()
+            self.csViewModel?.fetchCustomScenic()
         }, onError: { error in
             print("error: \(error.localizedDescription)")
         }, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    
+    
+    private func bindCustomScenicViewModel(){
+        csViewModel?.locations.asObservable().subscribe(onNext: { locations in
+            let annotations = locations.map({ location -> ScenicAnnotation in
+                let annotation = ScenicAnnotation(location)
+//                DispatchQueue.main.async {
+//                    self.scenicMapView.addAnnotation(annotation)
+//                }
+                return annotation
+            })
+            DispatchQueue.main.async {
+                self.scenicMapView.addAnnotations(annotations)
+//                self.scenicMapView.showAnnotations(annotations, animated: true)
+            }
+        }, onError: nil, onCompleted: nil, onDisposed: nil)
+            .disposed(by: disposeBag)
+        
+        
     }
 }
 
@@ -98,7 +131,7 @@ extension ScenicMapViewController {
             if let destinationVC = segue.destination as? ScenicDetailsViewController {
                 guard let selectedAnnotation = selectedAnnotation else { return }
                 destinationVC.scenic = selectedAnnotation.scenic
-                destinationVC.title = selectedAnnotation.name
+                destinationVC.title = selectedAnnotation.scenic?.name
             }
         }
     }
@@ -111,4 +144,34 @@ extension ScenicMapViewController {
             }
         }
     }
+    
+    @objc func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
+        if gestureRecognizer.state != .began { return }
+        let touchPoint = gestureRecognizer.location(in: scenicMapView)
+        let touchMapCoordinate = scenicMapView.convert(touchPoint, toCoordinateFrom: scenicMapView)
+        let clLocation = CLLocation(latitude: touchMapCoordinate.latitude,
+                                    longitude: touchMapCoordinate.longitude)
+        
+        let addNewAnnotationAlert = UIAlertController(title: "Add New Scenic", message: nil, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        addNewAnnotationAlert.addAction(cancelAction)
+        addNewAnnotationAlert.addTextField { newScenicNameTextField in
+            newScenicNameTextField.placeholder = "Enter Scenic Name"
+        }
+        let saveAction = UIAlertAction(title: "Save Scenic", style: .default) { alert in
+            let textField = addNewAnnotationAlert.textFields![0] as UITextField
+            guard let textFieldText = textField.text else { return }
+            let loc = ["lat": Float(clLocation.coordinate.latitude), "lng": Float(clLocation.coordinate.longitude), "name": textFieldText, "comment": ""] as [String : Any]
+            guard let scenic = Mapper<Location>().map(JSON: loc) else { return }
+            CustomScenicViewModel().addCustomScenic(scenic)
+            let userAddedAnnotation = ScenicAnnotation(scenic)
+            self.scenicMapView.addAnnotation(userAddedAnnotation)
+        }
+        addNewAnnotationAlert.addAction(saveAction)
+        self.present(addNewAnnotationAlert, animated: true, completion: nil)
+    }
+    
+
 }
+
+
